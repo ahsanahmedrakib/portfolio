@@ -89,7 +89,7 @@ export function ProjectCard({ project }: { project: Project }) {
                 rel="noopener noreferrer"
                 onClick={(e) => e.stopPropagation()}
                 aria-label="Live site"
-                className="grid h-8 w-8 place-items-center rounded-lg border border-white/10 text-slate-300 transition-colors hover:border-emerald-400/40 hover:text-emerald-300"
+                className="relative z-20 grid h-8 w-8 place-items-center rounded-lg border border-white/10 text-slate-300 transition-colors hover:border-emerald-400/40 hover:text-emerald-300"
               >
                 <ExternalLink className="h-4 w-4" />
               </Link>
@@ -101,7 +101,7 @@ export function ProjectCard({ project }: { project: Project }) {
                 rel="noopener noreferrer"
                 onClick={(e) => e.stopPropagation()}
                 aria-label="Repository"
-                className="grid h-8 w-8 place-items-center rounded-lg border border-white/10 text-slate-300 transition-colors hover:border-cyan-400/40 hover:text-cyan-300"
+                className="relative z-20 grid h-8 w-8 place-items-center rounded-lg border border-white/10 text-slate-300 transition-colors hover:border-cyan-400/40 hover:text-cyan-300"
               >
                 <GithubIcon className="h-4 w-4" />
               </Link>
@@ -109,6 +109,6 @@ export function ProjectCard({ project }: { project: Project }) {
           </span>
         </div>
       </div>
-    </Link>
+    </div>
   );
 }
