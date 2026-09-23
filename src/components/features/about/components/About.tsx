@@ -1,4 +1,6 @@
 import { MapPin, Mail, Phone } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 import { profile } from "@/components/features/profile";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -29,12 +31,12 @@ export function About() {
               <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-sm text-slate-300">
                 <MapPin className="h-4 w-4 text-cyan-400" /> {profile.location}
               </span>
-              <a
+              <Link
                 href={`mailto:${profile.email}`}
                 className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-sm text-slate-300 transition-colors hover:border-cyan-400/40 hover:text-cyan-300"
               >
                 <Mail className="h-4 w-4 text-cyan-400" /> {profile.email}
-              </a>
+              </Link>
               <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-sm text-slate-300">
                 <Phone className="h-4 w-4 text-cyan-400" /> {profile.phone}
               </span>
@@ -59,13 +61,21 @@ export function About() {
             ))}
             <Reveal delay={0.34} variant="scale" className="col-span-2">
               <div className="glass flex items-center gap-4 rounded-2xl p-5">
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-400 to-cyan-500 font-display text-lg font-bold text-ink-950">
-                  AI
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-xl bg-white p-1.5">
+                  <div className="relative h-full w-full">
+                    <Image
+                      src="/ai/claude.png"
+                      alt="Claude"
+                      fill
+                      sizes="36px"
+                      className="object-contain"
+                    />
+                  </div>
                 </div>
                 <div>
-                  <p className="font-semibold text-white">AI-Assisted Engineering</p>
+                  <p className="font-semibold text-white">AI Agentic Engineering</p>
                   <p className="text-sm text-slate-400">
-                    Claude, AI-powered CLIs & context engineering
+                    opencode, Claude CLI, ChatGPT, Grok & MCP — 7+ projects shipped end to end by AI agents
                   </p>
                 </div>
               </div>

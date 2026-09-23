@@ -1,11 +1,12 @@
 export const profile = {
   name: "Ahsan Ahmed Rakib",
   firstName: "Ahsan",
-  role: "Software Engineer",
+  role: "Software Engineer & AI Agentic Developer",
   location: "Dhaka, Bangladesh",
-  email: "ahsanahmedrakib99@gmail.com",
+  email: "me.ahsanahmedrakib@gmail.com",
   phone: "+8801631112475",
   avatar: "https://avatars.githubusercontent.com/u/63731067?v=4",
+  logo: "/rakib.jpg",
   website: "https://ahsanahmedrakib.vercel.app/",
   resume:
     "https://drive.google.com/file/d/1bVQYWlpokL8ciC7ZUup993twKOwO_gLl/view?usp=drive_link",
@@ -14,17 +15,19 @@ export const profile = {
     linkedin: "https://www.linkedin.com/in/ahsanahmedrakib/",
     facebook: "https://www.facebook.com/rakibahsanahmed",
     twitter: "https://twitter.com/A_A_Rakib",
+    whatsapp: "https://wa.me/8801631112475",
+    messenger: "https://m.me/rakibahsanahmed",
   },
   roles: [
+    "AI Agentic Developer",
     "Software Engineer",
     "Frontend Developer",
     "React & Next.js Specialist",
-    "Full-Stack Developer",
-    "AI-Assisted Developer",
+    "LLM-Powered Developer",
   ],
   summary: [
     "Software Engineer with 4+ years of experience designing and developing scalable web applications using React.js, Next.js, JavaScript, and TypeScript. I have a proven track record of delivering enterprise-grade solutions in the travel and aviation industry — including booking platforms, administrative systems, CRM solutions, and operational management tools.",
-    "I enjoy collaborating with cross-functional teams to transform business requirements into reliable, user-friendly applications. I'm skilled in modern frontend development, API integration, performance optimization, and AI-assisted development using Claude and AI-powered CLI tools — with expertise in context engineering to enhance coding workflows, productivity, and software quality.",
+    "Today I work as an AI Agentic Developer — orchestrating Claude CLI, opencode CLI, ChatGPT, and Grok to design, implement, debug, and optimize software end to end. Using MCP servers, LLM orchestration, and strong context engineering, I've shipped more than 7 complete projects with AI agents at the core of the workflow, dramatically accelerating delivery without cutting corners on quality.",
   ],
   highlights: [
     {
@@ -36,7 +39,7 @@ export const profile = {
       label: "Projects Delivered",
     },
     {
-      value: "3",
+      value: "2",
       label: "Industries Served",
     },
     {
@@ -47,9 +50,11 @@ export const profile = {
   about: [
     "I'm a Software Engineer based in Dhaka, Bangladesh, currently building enterprise applications at TechnoNext Software Ltd (a concern of US-Bangla Group). My journey started with a diploma in Computer Technology and grew through a BSc in CSE — now I ship production-grade web apps used by thousands of users.",
     "Over the years I've built booking platforms for airlines, administrative and aviation maintenance (CAMO/AMO) systems, CRM solutions, full-featured CMS corporate websites, e-commerce platforms, and school management systems. I care deeply about clean architecture, performance, and delightful UI/UX.",
-    "Lately I've embraced AI-first engineering: using Claude and AI-powered CLI tools with strong context engineering to design, implement, debug, and optimize features faster while keeping quality high.",
+    "Lately I've embraced agentic engineering: I pair Claude CLI, opencode CLI, ChatGPT, and Grok — connected through MCP servers — with strong context engineering to design, implement, debug, and ship features faster. More than 7 of my recent projects were built end to end with AI agents, proving that a disciplined agentic workflow can deliver production-grade software at a fraction of the usual time.",
   ],
   proficiencies: [
+    { name: "AI Agentic Development & LLM Orchestration", level: 95 },
+    { name: "MCP Servers & AI Tooling (Claude CLI, opencode CLI)", level: 92 },
     { name: "React.js / Next.js", level: 96 },
     { name: "TypeScript / JavaScript", level: 92 },
     { name: "Tailwind CSS & Modern UI", level: 94 },
@@ -57,7 +62,7 @@ export const profile = {
     { name: "Backend (NestJS / Express / PHP Laravel)", level: 84 },
     { name: "MongoDB & Data Modeling", level: 82 },
     { name: "Performance Optimization & SEO", level: 86 },
-    { name: "AI-Assisted Development & Context Engineering", level: 93 },
+    { name: "Prompt & Context Engineering", level: 93 },
   ],
   skills: [
     {
@@ -77,15 +82,40 @@ export const profile = {
     },
     {
       group: "Backend",
-      items: ["NestJS", "Express.js", "MongoDB", "REST API", "Swagger", "JWT Auth"],
+      items: [
+        "NestJS",
+        "Express.js",
+        "MongoDB",
+        "REST API",
+        "Swagger",
+        "JWT Auth",
+      ],
     },
     {
       group: "Tools & Workflow",
-      items: ["Git", "GitHub", "GitLab", "VS Code", "Figma", "Chrome DevTools", "Postman"],
+      items: [
+        "Git",
+        "GitHub",
+        "GitLab",
+        "VS Code",
+        "Figma",
+        "Chrome DevTools",
+        "Postman",
+      ],
     },
     {
-      group: "AI-Powered Development",
-      items: ["Claude", "AI-Powered CLI", "Context Engineering", "AI-Assisted Refactoring"],
+      group: "AI Agentic Development",
+      items: [
+        "opencode CLI",
+        "Claude CLI",
+        "ChatGPT",
+        "Grok",
+        "MCP (Model Context Protocol)",
+        "LLM Orchestration",
+        "AI Agent Workflows",
+        "Prompt Engineering",
+        "Context Engineering",
+      ],
     },
   ],
   experience: [
@@ -95,6 +125,7 @@ export const profile = {
       period: "March 2022 — June 2026",
       location: "Dhaka, Bangladesh",
       current: false,
+      image: "/job/technonext.png",
       points: [
         "Developed and maintained scalable web applications using React.js, Next.js, TypeScript, and modern frontend technologies.",
         "Built reusable UI components, integrated REST APIs, and implemented complex business logic for enterprise applications.",
@@ -110,6 +141,7 @@ export const profile = {
       period: "January 2022 — March 2022",
       location: "Dhaka, Bangladesh",
       current: false,
+      image: "/job/payrasoft.webp",
       points: [
         "Built responsive and reusable user interfaces using React.js and JavaScript.",
         "Integrated REST APIs and resolved application bugs and issues.",
@@ -125,13 +157,23 @@ export const profile = {
       period: "2019 — 2023",
       note: "CGPA 3.67",
       badge: "BSc",
+      image: "/education/gub.webp",
     },
     {
       degree: "Diploma in Computer Technology",
       school: "Gopalganj Polytechnic Institute",
-      period: "2016 — 2019",
+      period: "2015 — 2019",
       note: "CGPA 3.57",
       badge: "Diploma",
+      image: "/education/gpi.webp",
+    },
+    {
+      degree: "Secondary School Certificate - Science",
+      school: "SM Model Govt. High School, Gopalganj",
+      period: "2010-2015",
+      note: "GPA 4.78",
+      badge: "SSC",
+      image: "/education/model.webp",
     },
   ],
   training: [
@@ -143,6 +185,7 @@ export const profile = {
   languages: [
     { name: "Bangla", level: "Native" },
     { name: "English", level: "Intermediate" },
+    { name: "Arabic", level: "Readig Only" },
   ],
   volunteering: [
     {
@@ -165,6 +208,8 @@ export const profile = {
     {
       name: "FirstTrip Ltd",
       tagline: "Flight module of a travel-tech admin panel",
+      image: "/projects/ft.png",
+      liveUrl: "https://www.firsttrip.com/",
       overview: [
         "Worked on the Flight module of the FirstTrip Admin Panel, which includes Admin Panel, Flight, CRM, Group Fare, and Meet & Greet services.",
         "Developed and maintained features such as Airline, Airport, Supplier, Payment Gateway, Coupon, Charge, User & Role Management, and Role-Based Permissions.",
@@ -175,6 +220,8 @@ export const profile = {
     {
       name: "Airlines Resource Management",
       tagline: "Aviation CMS for Technical Records, CAMO & AMO",
+      image: "/projects/arm.png",
+      liveUrl: "",
       overview: [
         "Developed airline CMS modules for Technical Records, CAMO, and AMO operations using React.",
         "Built dynamic dashboards and operational reports to support engineering and administrative teams.",
@@ -185,6 +232,8 @@ export const profile = {
     {
       name: "US Bangla Airlines",
       tagline: "Airline booking & management system",
+      image: "/projects/air.png",
+      liveUrl: "https://usbair.com/",
       overview: [
         "Built to present US-Bangla Airlines, providing a seamless online booking and airline management system.",
         "Showcases flight schedules, ticket booking, check-in services, and promotions.",
@@ -196,6 +245,8 @@ export const profile = {
     {
       name: "TechnoNext Ltd",
       tagline: "Modern corporate website",
+      image: "/projects/tn.png",
+      liveUrl: "https://technonext.com/",
       overview: [
         "Developed a modern corporate website showcasing TechnoNext Ltd.'s expertise in Software Development, Web/Mobile Apps, AI, IoT, Cloud, and Cybersecurity.",
         "Built sections for case studies, testimonials, and featured projects to highlight company achievements and solutions.",
@@ -206,22 +257,14 @@ export const profile = {
     {
       name: "NextPixel",
       tagline: "AI-Driven photo editor",
+      image: "/projects/np.png",
+      liveUrl: "http://studio-dev.nextpixel.ai/",
       overview: [
         "Built a modern browser-based photo editing platform with advanced canvas interactions and image editing tools.",
         "Developed and delivered features using an AI-first engineering workflow, utilizing AI assistants for architecture design, implementation, debugging, and optimization.",
         "Created a responsive and performant user experience with real-time editing, object manipulation, and export functionalities.",
       ],
       stack: ["Next JS", "TypeScript", "Konva.js"],
-    },
-    {
-      name: "Backend API",
-      tagline: "100% AI-driven scalable RESTful API",
-      overview: [
-        "Developed a scalable RESTful API using NestJS, TypeScript, MongoDB, and Mongoose, following a modular architecture and backend best practices.",
-        "Implemented JWT-based authentication and authorization, request validation, secure password hashing with bcrypt, and comprehensive API documentation using Swagger.",
-        "Built media upload and management functionality with Cloudinary, Multer, and Sharp, enabling optimized image processing, storage, and delivery.",
-      ],
-      stack: ["NestJS", "MongoDB", "JWT", "Cloudinary"],
     },
   ],
 } as const;

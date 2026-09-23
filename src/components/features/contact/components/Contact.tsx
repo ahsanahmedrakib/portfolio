@@ -1,5 +1,14 @@
 import { Mail, MapPin, MessageSquare, Phone } from "lucide-react";
+import Link from "next/link";
 import { profile } from "@/components/features/profile";
+import {
+  FacebookIcon,
+  GithubIcon,
+  LinkedInIcon,
+  MessengerIcon,
+  WhatsAppIcon,
+  XIcon,
+} from "@/components/icons";
 import { ContactForm } from "./ContactForm";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -23,12 +32,15 @@ const contactCards = [
     value: profile.location,
     href: null,
   },
-  {
-    icon: MessageSquare,
-    label: "Socials",
-    value: "GitHub · LinkedIn · Facebook",
-    href: profile.socials.github,
-  },
+];
+
+const socialLinks = [
+  { icon: GithubIcon, href: profile.socials.github, label: "GitHub" },
+  { icon: LinkedInIcon, href: profile.socials.linkedin, label: "LinkedIn" },
+  { icon: FacebookIcon, href: profile.socials.facebook, label: "Facebook" },
+  { icon: XIcon, href: profile.socials.twitter, label: "Twitter" },
+  { icon: WhatsAppIcon, href: profile.socials.whatsapp, label: "WhatsApp" },
+  { icon: MessengerIcon, href: profile.socials.messenger, label: "Messenger" },
 ];
 
 export function Contact() {
@@ -51,7 +63,7 @@ export function Contact() {
               {contactCards.map(({ icon: Icon, label, value, href }) => {
                 const inner = (
                   <>
-                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-cyan-400/20 bg-cyan-400/[0.08] text-cyan-300">
+                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-cyan-400/20 bg-cyan-400/8 text-cyan-300">
                       <Icon className="h-5 w-5" />
                     </span>
                     <div>
@@ -61,7 +73,7 @@ export function Contact() {
                   </>
                 );
                 return href ? (
-                  <a
+                  <Link
                     key={label}
                     href={href}
                     target={href.startsWith("http") ? "_blank" : undefined}
@@ -69,7 +81,7 @@ export function Contact() {
                     className="glass flex items-center gap-4 rounded-2xl p-5 transition-colors hover:border-cyan-400/30"
                   >
                     {inner}
-                  </a>
+                  </Link>
                 ) : (
                   <div key={label} className="glass flex items-center gap-4 rounded-2xl p-5">
                     {inner}
@@ -77,15 +89,44 @@ export function Contact() {
                 );
               })}
 
-              <a
+              <div className="glass rounded-2xl p-5">
+                <div className="flex items-center gap-4">
+                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-cyan-400/20 bg-cyan-400/8 text-cyan-300">
+                    <MessageSquare className="h-5 w-5" />
+                  </span>
+                  <div>
+                    <p className="text-xs font-medium uppercase tracking-wider text-slate-500">
+                      Socials
+                    </p>
+                    <p className="mt-0.5 text-sm font-semibold text-white">Follow me anywhere</p>
+                  </div>
+                </div>
+                <div className="mt-4 flex flex-wrap items-center gap-2">
+{socialLinks.map(({ icon: Icon, href, label }) => (
+                    <Link
+                      key={label}
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={label}
+                      title={label}
+                      className="grid h-10 w-10 place-items-center rounded-xl border border-white/10 bg-white/3 text-slate-300 transition-colors hover:border-cyan-400/40 hover:text-cyan-300"
+                    >
+                      <Icon className="h-4 w-4" />
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
+<Link
                 href={profile.resume}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-sheen mt-2 flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-cyan-500 to-violet-500 px-6 py-4 text-sm font-semibold text-white transition-all hover:shadow-[0_0_28px_rgba(34,211,238,0.5)]"
+                className="btn-sheen mt-2 flex items-center justify-center gap-2 rounded-2xl bg-linear-to-r from-cyan-500 to-violet-500 px-6 py-4 text-sm font-semibold text-white transition-all hover:shadow-[0_0_28px_rgba(34,211,238,0.5)]"
               >
                 <Mail className="h-4 w-4" />
                 Download My Resume
-              </a>
+              </Link>
             </div>
           </Reveal>
 

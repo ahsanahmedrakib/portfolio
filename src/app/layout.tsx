@@ -7,6 +7,7 @@ import {
   Navbar,
   Footer,
   BackToTop,
+  SocialFloat,
 } from "@/components/features/layout";
 import { ScrollProgress } from "@/components/ui/ScrollProgress";
 
@@ -33,13 +34,18 @@ export const metadata: Metadata = {
     template: `%s · ${profile.name}`,
   },
   description:
-    "4+ years of experience building scalable, enterprise-grade web applications with React.js, Next.js, and TypeScript — with expertise in the travel, aviation, energy, and education industries.",
+    "AI Agentic Developer with 4+ years of experience building scalable, enterprise-grade web applications with React.js, Next.js, and TypeScript — orchestrating Claude CLI, opencode, ChatGPT, Grok, and MCP to ship 7+ AI-agent-driven projects.",
   authors: [{ name: profile.name }],
   keywords: [
     "Ahsan Ahmed Rakib",
     "Software Engineer",
+    "AI Agentic Developer",
     "Next.js Developer",
     "React Developer",
+    "opencode",
+    "Claude CLI",
+    "LLM",
+    "MCP",
     "Frontend Developer",
     "Portfolio",
     "Bangladesh",
@@ -50,7 +56,7 @@ export const metadata: Metadata = {
     url: "https://ahsanahmedrakib.vercel.app",
     title: `${profile.name} — ${profile.role}`,
     description:
-      "Software Engineer building scalable web applications with React, Next.js, and TypeScript.",
+      "AI Agentic Developer building scalable web applications with React, Next.js, TypeScript, and agentic AI workflows.",
     siteName: `${profile.name} Portfolio`,
     images: [{ url: profile.avatar, width: 460, height: 460, alt: profile.name }],
   },
@@ -58,8 +64,26 @@ export const metadata: Metadata = {
     card: "summary",
     title: `${profile.name} — ${profile.role}`,
     description:
-      "Software Engineer building scalable web applications with React, Next.js, and TypeScript.",
+      "AI Agentic Developer building scalable web applications with React, Next.js, TypeScript, and agentic AI workflows.",
     images: [profile.avatar],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  icons: {
+    icon: [{ url: "/rakib.ico", type: "image/x-icon" }],
+    apple: [{ url: "/rakib.jpg", sizes: "180x180" }],
+  },
+  manifest: "/site.webmanifest",
+  alternates: {
+    canonical: "https://ahsanahmedrakib.vercel.app",
   },
 };
 
@@ -79,6 +103,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <ScrollProgress />
         <Navbar />
         <BackToTop />
+        <SocialFloat />
         <main>{children}</main>
         <Footer />
       </body>

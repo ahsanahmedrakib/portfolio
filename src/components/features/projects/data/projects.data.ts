@@ -6,8 +6,9 @@ export type Project = {
   category: string;
   year: string;
   language: string;
+  image?: string;
   liveUrl?: string;
-  repoUrl: string;
+  repoUrl?: string;
   stack: string[];
   gradient: string;
   monogram: string;
@@ -29,8 +30,9 @@ export const projects: Project[] = [
       "Full-stack, CMS-driven corporate website for a leading solar energy company — with a dark-themed admin dashboard, bilingual support and a custom file-based backend.",
     category: "Corporate Website & CMS",
     year: "2026",
-    language: "TypeScript",
-    liveUrl: "https://aheadsolarbd.com",
+    language: "Next Js",
+    image: "/projects/ast.png",
+    liveUrl: "https://solar-sigma-weld.vercel.app/",
     repoUrl: "https://github.com/ahsanahmedrakib/solar",
     stack: [
       "Next.js 16",
@@ -99,7 +101,8 @@ export const projects: Project[] = [
       "A modern corporate website for a comprehensive IT solutions provider — web design, cloud services, voice systems, internet connectivity, and managed IT support.",
     category: "Corporate Website",
     year: "2026",
-    language: "TypeScript",
+    language: "Next Js",
+    image: "/projects/bctt.png",
     liveUrl: "https://bismillah-it.vercel.app/",
     repoUrl: "https://github.com/ahsanahmedrakib/bismillah-it",
     stack: [
@@ -159,7 +162,9 @@ export const projects: Project[] = [
       "The full-featured Ahead Solar corporate site re-architected in Laravel — with Blade + Tailwind CSS 4 frontend, a complete admin panel, and MySQL.",
     category: "Corporate Website & CMS",
     year: "2026",
-    language: "PHP",
+    language: "PHP (Laravel)",
+    image: "/projects/asl.png",
+    liveUrl: "https://aheadsolrbd.com",
     repoUrl: "https://github.com/ahsanahmedrakib/aheadsolarbd",
     stack: ["Laravel", "PHP 8.3", "Blade", "Tailwind CSS 4", "Vite", "MySQL", "PHPUnit / Pest"],
     gradient: "from-amber-400 via-orange-500 to-rose-500",
@@ -214,7 +219,8 @@ export const projects: Project[] = [
       "A complete Next.js e-commerce platform with a customer storefront (cart, checkout, wishlist, blog) and a full product-management admin panel.",
     category: "E-commerce",
     year: "2026",
-    language: "TypeScript",
+    language: "Next.js",
+    image: "/projects/rilito.png",
     liveUrl: "https://rilito.vercel.app",
     repoUrl: "https://github.com/ahsanahmedrakib/rilito",
     stack: ["Next.js 16", "TypeScript", "Tailwind CSS v4", "Next.js API routes", "REST"],
@@ -268,7 +274,8 @@ export const projects: Project[] = [
       "A single-page website for a volunteer-driven non-profit technology organization in Bangladesh focused on cyber awareness and digital literacy.",
     category: "Non-profit",
     year: "2026",
-    language: "TypeScript",
+    language: "Next Js",
+    image: "/projects/tp.png",
     liveUrl: "https://techpunno.vercel.app",
     repoUrl: "https://github.com/ahsanahmedrakib/techpunno",
     stack: [
@@ -332,7 +339,9 @@ export const projects: Project[] = [
       "A large Laravel corporate website for an IT services company — dozens of pages across IT Support, Voice, Internet, Cloud, and Web services.",
     category: "Corporate Website",
     year: "2026",
-    language: "PHP",
+    language: "PHP (Laravel)",
+    image: "/projects/bctl.png",
+    liveUrl: "https://bct.com.bd/",
     repoUrl: "https://github.com/ahsanahmedrakib/bct",
     stack: ["Laravel", "Blade", "Tailwind CSS", "Vite", "MySQL", "PHPUnit"],
     gradient: "from-sky-400 via-blue-500 to-indigo-600",
@@ -383,7 +392,9 @@ export const projects: Project[] = [
       "A complete Laravel school management system with a public website plus student, teacher, parent, and admin portals — attendance, exams, results, fees, payroll, transport, and library.",
     category: "School Management System",
     year: "2026",
-    language: "PHP",
+    language: "PHP (Laravel)",
+    image: "/projects/ris.png",
+    liveUrl: "https://ris.cleverapps.io/",
     repoUrl: "https://github.com/ahsanahmedrakib/ris",
     stack: [
       "Laravel",
@@ -440,6 +451,60 @@ export const projects: Project[] = [
           "QR codes, ID cards, PDF exports, activity logging, and reports make it immediately usable in a real institution.",
       },
     ],
+  },
+  {
+    slug: "scalable-rest-api",
+    name: "Backend API — NestJS RESTful API",
+    shortName: "Backend API",
+    tagline: "100% AI-driven scalable RESTful API",
+    category: "Backend Development",
+    year: "2026",
+    language: "Nest Js",
+    image: "/projects/nest.png",
+    stack: ["NestJS", "TypeScript", "MongoDB", "Mongoose", "JWT", "bcrypt", "Swagger", "Cloudinary"],
+    gradient: "from-indigo-400 via-blue-500 to-sky-500",
+    monogram: "API",
+    overview: [
+      "A scalable RESTful API built with NestJS, TypeScript, MongoDB, and Mongoose — architected with modularity and backend best practices from day one.",
+      "Every layer — from schema design to authentication to media handling to documentation — was designed and implemented through a 100% AI-driven workflow, demonstrating what disciplined agentic development can produce.",
+    ],
+    role: [
+      "Designed and implemented the full API end to end using an AI-driven development workflow.",
+      "Established a modular NestJS architecture with clean separation across features, services, and controllers.",
+    ],
+    responsibilities: [
+      "JWT-based authentication and authorization with secure password hashing using bcrypt.",
+      "Request validation and DTOs for safe, type-safe data handling.",
+      "Media upload and management with Cloudinary, Multer, and Sharp for optimized image processing, storage, and delivery.",
+      "Comprehensive API documentation generated with Swagger.",
+    ],
+    features: [
+      "Modular NestJS architecture — feature-focused modules instead of one monolithic controller.",
+      "JWT authentication with guards, roles, and authorization decorators.",
+      "bcrypt password hashing and secure user session handling.",
+      "Request validation via DTOs and class-validator.",
+      "Cloudinary + Multer + Sharp pipeline for image upload, resize, and optimized delivery.",
+      "Swagger/OpenAPI documentation with interactive endpoints.",
+    ],
+    highlights: [
+      {
+        title: "100% AI-driven build",
+        description:
+          "Architecture, implementation, and documentation were all driven by AI agents — proving agentic workflows can ship production-grade backend code.",
+      },
+      {
+        title: "Clean, modular architecture",
+        description:
+          "Feature-first NestJS structure keeps auth, users, and media separated and easily extendable.",
+      },
+      {
+        title: "Production-ready security",
+        description:
+          "JWT auth, role guards, bcrypt hashing, and validated requests baked into every endpoint.",
+      },
+    ],
+    impact:
+      "Shipped a scalable, documented REST API that other projects can plug into — built end to end with an AI-driven workflow to demonstrate the speed of agentic development.",
   },
 ];
 

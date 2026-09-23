@@ -2,11 +2,14 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion, useReducedMotion, useScroll, useTransform, type Variants } from "framer-motion";
 import { ArrowDown } from "lucide-react";
 import { profile } from "@/components/features/profile";
 import { Reveal } from "@/components/ui/Reveal";
 import { FacebookIcon, GithubIcon, LinkedInIcon, XIcon } from "@/components/icons";
+
+const MotionLink = motion.create(Link);
 
 function useTypewriter(words: readonly string[], speed = 70, pause = 1600) {
   const [index, setIndex] = useState(0);
@@ -125,16 +128,16 @@ export function Hero() {
 
           <Reveal delay={0.24}>
             <p className="max-w-xl text-base leading-relaxed text-slate-400 sm:text-lg">
-              I design and build scalable web applications with{" "}
-              <span className="text-slate-200">React.js & Next.js</span>, delivering
-              enterprise-grade solutions in the travel, aviation, and energy industries — while
-              pushing developer velocity with AI-first workflows.
+              An <span className="text-slate-200">AI Agentic Developer</span> shipping{" "}
+              <span className="text-slate-200">React.js & Next.js</span> applications — orchestrating
+              opencode, Claude CLI, ChatGPT, Grok & MCP to deliver enterprise-grade products in the
+              travel, aviation, and energy industries.
             </p>
           </Reveal>
 
           <Reveal delay={0.32}>
             <div className="flex flex-wrap items-center gap-4">
-              <motion.a
+              <MotionLink
                 href="#projects"
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.96 }}
@@ -142,8 +145,8 @@ export function Hero() {
               >
                 View My Work
                 <ArrowDown className="h-4 w-4 transition-transform group-hover:translate-y-1" />
-              </motion.a>
-              <motion.a
+              </MotionLink>
+              <MotionLink
                 href={profile.resume}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -152,14 +155,14 @@ export function Hero() {
                 className="inline-flex items-center gap-2 rounded-full border border-white/15 px-7 py-3 text-sm font-semibold text-slate-200 transition-colors hover:border-cyan-400/50 hover:text-white"
               >
                 Download Resume
-              </motion.a>
+              </MotionLink>
             </div>
           </Reveal>
 
           <Reveal delay={0.4}>
             <div className="mt-2 flex items-center gap-3">
               {socials.map(({ icon: Icon, href, label }) => (
-                <motion.a
+                <MotionLink
                   key={label}
                   href={href}
                   target="_blank"
@@ -171,7 +174,7 @@ export function Hero() {
                   className="grid h-11 w-11 place-items-center rounded-xl border border-white/10 bg-white/3 text-slate-300 transition-colors hover:border-cyan-400/40 hover:text-cyan-300 hover:shadow-[0_8px_20px_rgba(34,211,238,0.15)]"
                 >
                   <Icon className="h-5 w-5" />
-                </motion.a>
+                </MotionLink>
               ))}
             </div>
           </Reveal>
@@ -233,7 +236,7 @@ export function Hero() {
       </div>
 
       <div className="pointer-events-none absolute bottom-6 left-1/2 hidden -translate-x-1/2 animate-float md:block">
-        <a href="#about" aria-label="Scroll down">
+        <Link href="#about" aria-label="Scroll down">
           <div className="flex h-10 w-6 items-start justify-center rounded-full border border-white/20 p-1.5">
             <motion.div
               animate={reduce ? undefined : { y: [0, 12, 0] }}
@@ -241,7 +244,7 @@ export function Hero() {
               className="h-2 w-1 rounded-full bg-cyan-400"
             />
           </div>
-        </a>
+        </Link>
       </div>
     </section>
   );

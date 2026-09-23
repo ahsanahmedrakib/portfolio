@@ -1,4 +1,5 @@
 import { Heart } from "lucide-react";
+import Link from "next/link";
 import { profile } from "@/components/features/profile";
 import { FacebookIcon, GithubIcon, LinkedInIcon, XIcon } from "@/components/icons";
 
@@ -24,19 +25,19 @@ export function Footer() {
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-8 px-5 sm:px-8">
         <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
           {nav.map((item) => (
-            <a
+            <Link
               key={item.href}
               href={item.href}
               className="text-sm text-slate-400 transition-colors hover:text-cyan-300"
             >
               {item.label}
-            </a>
+            </Link>
           ))}
         </div>
 
         <div className="flex items-center gap-3">
           {socials.map(({ icon: Icon, href, label }) => (
-            <a
+            <Link
               key={label}
               href={href}
               target="_blank"
@@ -45,7 +46,7 @@ export function Footer() {
               className="grid h-10 w-10 place-items-center rounded-xl border border-white/10 bg-white/[0.03] text-slate-300 transition-all hover:-translate-y-0.5 hover:border-cyan-400/40 hover:text-cyan-300"
             >
               <Icon className="h-4 w-4" />
-            </a>
+            </Link>
           ))}
         </div>
 

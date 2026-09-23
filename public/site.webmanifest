@@ -1,0 +1,17 @@
+{
+  "name": "Ahsan Ahmed Rakib — Software Engineer",
+  "short_name": "Ahsan Rakib",
+  "description": "Software Engineer building scalable web applications with React, Next.js, and TypeScript.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#04070d",
+  "theme_color": "#04070d",
+  "icons": [
+    {
+      "src": "/rakib.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "any"
+    }
+  ]
+}

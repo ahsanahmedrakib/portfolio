@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { projects, projectCategories } from "../data/projects.data";
 import { ProjectCard } from "./ProjectCard";
@@ -28,7 +29,7 @@ export function Projects() {
               Recent projects, <span className="text-gradient">explained end to end</span>
             </>
           }
-          description="Seven of my latest builds — from CMS-driven corporate websites to full e-commerce and school management systems. Every card opens into a complete case study."
+          description="Eight of my latest builds — from CMS-driven corporate websites to full e-commerce, school management systems, and a 100% AI-driven REST API. Every card opens into a complete case study."
         />
 
         <Reveal variant="fade">
@@ -71,7 +72,7 @@ export function Projects() {
         </motion.div>
 
         <Reveal delay={0.1} className="mt-12 text-center">
-          <a
+          <Link
             href="https://github.com/ahsanahmedrakib?tab=repositories"
             target="_blank"
             rel="noopener noreferrer"
@@ -79,7 +80,7 @@ export function Projects() {
           >
             <GithubIcon className="h-4 w-4" />
             Explore all repositories
-          </a>
+          </Link>
         </Reveal>
       </div>
     </section>

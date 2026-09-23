@@ -62,23 +62,25 @@ export function ProjectDetail({ project }: { project: Project }) {
 
         <div className="mb-10 flex flex-wrap items-center justify-center gap-3">
           {project.liveUrl && (
-            <a
+            <Link
               href={project.liveUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-sheen inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-cyan-500 to-violet-500 px-6 py-3 text-sm font-semibold text-white transition-all hover:shadow-[0_0_24px_rgba(34,211,238,0.5)]"
             >
               <ExternalLink className="h-4 w-4" /> Visit Live Site
-            </a>
+            </Link>
           )}
-          <a
-            href={project.repoUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-slate-200 transition-colors hover:border-cyan-400/50 hover:text-white"
-          >
-            <GithubIcon className="h-4 w-4" /> Source Code
-          </a>
+          {project.repoUrl && (
+            <Link
+              href={project.repoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-slate-200 transition-colors hover:border-cyan-400/50 hover:text-white"
+            >
+              <GithubIcon className="h-4 w-4" /> Source Code
+            </Link>
+          )}
         </div>
 
         <TechStack stack={project.stack} />
@@ -194,28 +196,32 @@ export function ProjectDetail({ project }: { project: Project }) {
             <p className="text-sm text-slate-400">
               {project.liveUrl
                 ? "Check out the deployed product or dig into the source code."
-                : "Explore the source code on GitHub."}
+                : project.repoUrl
+                  ? "Explore the source code on GitHub."
+                  : "Reach out anytime to see this project in action."}
             </p>
           </div>
           <div className="flex gap-3">
             {project.liveUrl && (
-              <a
+              <Link
                 href={project.liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-sheen inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-cyan-500 to-violet-500 px-5 py-2.5 text-sm font-semibold text-white transition-all hover:shadow-[0_0_20px_rgba(34,211,238,0.5)]"
               >
                 <ArrowUpRight className="h-4 w-4" /> Live Demo
-              </a>
+              </Link>
             )}
-            <a
-              href={project.repoUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-white/15 px-5 py-2.5 text-sm font-semibold text-slate-200 transition-colors hover:border-cyan-400/50 hover:text-white"
-            >
-              <GithubIcon className="h-4 w-4" /> Repo
-            </a>
+            {project.repoUrl && (
+              <Link
+                href={project.repoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full border border-white/15 px-5 py-2.5 text-sm font-semibold text-slate-200 transition-colors hover:border-cyan-400/50 hover:text-white"
+              >
+                <GithubIcon className="h-4 w-4" /> Repo
+              </Link>
+            )}
           </div>
         </div>
       </div>
