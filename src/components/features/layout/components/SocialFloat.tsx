@@ -73,7 +73,7 @@ export function SocialFloat() {
   ];
 
   return (
-    <div className="pointer-events-none fixed inset-0 z-[90]">
+    <div className="pointer-events-none fixed inset-0 z-[90] overflow-hidden">
       <div className="flex h-full items-center justify-end pr-6">
         <AnimatePresence>
           {visible && (

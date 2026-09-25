@@ -35,8 +35,8 @@ export function Navbar() {
       )}
     >
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:px-8">
-        <Link href="#home" className="group flex items-center gap-3">
-          <span className="relative flex h-9 w-9 overflow-hidden rounded-xl bg-linear-to-br from-cyan-400 to-violet-500 shadow-[0_0_20px_rgba(34,211,238,0.35)] transition-transform group-hover:scale-105">
+        <Link href="#home" className="group flex min-w-0 items-center gap-2.5 sm:gap-3">
+          <span className="relative flex h-9 w-9 shrink-0 overflow-hidden rounded-xl bg-linear-to-br from-cyan-400 to-violet-500 shadow-[0_0_20px_rgba(34,211,238,0.35)] transition-transform group-hover:scale-105">
             <Image
               src="/rakib.jpg"
               alt={profile.name}
@@ -45,11 +45,11 @@ export function Navbar() {
               className="object-cover"
             />
           </span>
-          <span className="hidden flex-col leading-tight sm:flex">
-            <span className="font-display text-sm font-semibold tracking-wide text-gradient">
-              Ahsan Ahmed Rakib
+          <span className="flex min-w-0 flex-col leading-tight">
+            <span className="truncate font-display text-sm font-semibold tracking-wide text-gradient">
+              {profile.name}
             </span>
-            <span className="text-[10px] text-slate-400">AI-Enhanced Software Engineer</span>
+            <span className="truncate text-[10px] text-slate-400">AI-Enhanced Software Engineer</span>
           </span>
         </Link>
 
@@ -65,7 +65,7 @@ export function Navbar() {
           ))}
         </div>
 
-        <div className="flex items-center gap-3">
+        <div className="flex shrink-0 items-center gap-3">
           <Link
             href="#contact"
             className="btn-sheen hidden rounded-full bg-linear-to-r from-cyan-500 to-violet-500 px-5 py-2 text-sm font-semibold text-white transition-all hover:shadow-[0_0_24px_rgba(34,211,238,0.5)] md:inline-flex"

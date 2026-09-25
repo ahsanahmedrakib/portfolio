@@ -92,7 +92,7 @@ export function Hero() {
             className="font-display text-4xl font-bold leading-[1.08] tracking-tight text-white sm:text-6xl lg:text-[4.2rem]"
           >
             Hi, I&apos;m{" "}
-            <span className="relative whitespace-nowrap">
+            <span className="relative sm:whitespace-nowrap">
               {nameWords.map((word, i) => (
                 <motion.span key={word} variants={wordItem} className="inline-block">
                   <span className="text-gradient">{word}</span>

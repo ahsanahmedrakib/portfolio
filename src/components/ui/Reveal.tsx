@@ -15,8 +15,8 @@ type RevealProps = {
 const variants = {
   fade: { hidden: { opacity: 0 }, visible: { opacity: 1 } },
   up: { hidden: { opacity: 0, y: 32 }, visible: { opacity: 1, y: 0 } },
-  left: { hidden: { opacity: 0, x: -40 }, visible: { opacity: 1, x: 0 } },
-  right: { hidden: { opacity: 0, x: 40 }, visible: { opacity: 1, x: 0 } },
+  left: { hidden: { opacity: 0, x: -24 }, visible: { opacity: 1, x: 0 } },
+  right: { hidden: { opacity: 0, x: 24 }, visible: { opacity: 1, x: 0 } },
   scale: { hidden: { opacity: 0, scale: 0.92 }, visible: { opacity: 1, scale: 1 } },
 };
 
