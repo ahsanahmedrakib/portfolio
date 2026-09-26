@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
   ArrowLeft,
   ArrowUpRight,
@@ -27,12 +28,29 @@ export function ProjectDetail({ project }: { project: Project }) {
 
         <div
           className={cn(
-            "relative mb-14 flex min-h-[16rem] items-center justify-center overflow-hidden rounded-3xl bg-gradient-to-br p-10",
-            project.gradient,
+            "relative mb-14 flex min-h-88 items-center justify-center overflow-hidden rounded-3xl bg-linear-to-br p-10 sm:min-h-104 sm:p-14",
+            !project.image && project.gradient,
           )}
         >
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(255,255,255,0.3),transparent_55%)]" />
-          <div className="bg-grid absolute inset-0 opacity-20" />
+          {project.image ? (
+            <>
+              <Image
+                src={project.image}
+                alt={`${project.name} cover`}
+                fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 64rem"
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-linear-to-t from-ink-950 via-ink-950/80 to-ink-950/45" />
+              <div className="absolute inset-0 bg-linear-to-br from-ink-950/70 via-transparent to-ink-950/50" />
+            </>
+          ) : (
+            <>
+              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(255,255,255,0.3),transparent_55%)]" />
+              <div className="bg-grid absolute inset-0 opacity-20" />
+            </>
+          )}
           <div className="absolute left-6 top-6 flex items-center gap-1.5">
             <span className="h-3 w-3 rounded-full bg-white/60" />
             <span className="h-3 w-3 rounded-full bg-white/60" />
@@ -66,7 +84,7 @@ export function ProjectDetail({ project }: { project: Project }) {
               href={project.liveUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-sheen inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-cyan-500 to-violet-500 px-6 py-3 text-sm font-semibold text-white transition-all hover:shadow-[0_0_24px_rgba(34,211,238,0.5)]"
+              className="btn-sheen inline-flex items-center gap-2 rounded-full bg-linear-to-r from-cyan-500 to-violet-500 px-6 py-3 text-sm font-semibold text-white transition-all hover:shadow-[0_0_24px_rgba(34,211,238,0.5)]"
             >
               <ExternalLink className="h-4 w-4" /> Visit Live Site
             </Link>
@@ -137,7 +155,7 @@ export function ProjectDetail({ project }: { project: Project }) {
                     key={feature.slice(0, 32)}
                     className="glass flex items-start gap-3 rounded-2xl p-4 text-sm leading-relaxed"
                   >
-                    <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-cyan-400/20 to-violet-400/20 font-mono text-xs text-cyan-300">
+                    <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-lg bg-linear-to-br from-cyan-400/20 to-violet-400/20 font-mono text-xs text-cyan-300">
                       ✓
                     </span>
                     {feature}
@@ -162,7 +180,7 @@ export function ProjectDetail({ project }: { project: Project }) {
                     key={h.title}
                     className="glass group rounded-3xl p-6 transition-colors hover:border-cyan-400/30"
                   >
-                    <span className="mb-3 block h-1.5 w-8 rounded-full bg-gradient-to-r from-cyan-400 to-violet-500" />
+                    <span className="mb-3 block h-1.5 w-8 rounded-full bg-linear-to-r from-cyan-400 to-violet-500" />
                     <h3 className="mb-2 font-display text-base font-bold text-white">{h.title}</h3>
                     <p className="text-sm leading-relaxed text-slate-400">{h.description}</p>
                   </div>
@@ -175,7 +193,7 @@ export function ProjectDetail({ project }: { project: Project }) {
         {project.impact && (
           <Reveal variant="up">
             <section className="mb-14">
-              <div className="glass relative overflow-hidden rounded-3xl bg-gradient-to-r from-cyan-500/10 via-violet-500/10 to-fuchsia-500/10 p-8">
+              <div className="glass relative overflow-hidden rounded-3xl bg-linear-to-r from-cyan-500/10 via-violet-500/10 to-fuchsia-500/10 p-8">
                 <div className="bg-grid absolute inset-0 opacity-30" />
                 <div className="relative">
                   <p className="mb-3 font-mono text-xs uppercase tracking-[0.3em] text-cyan-300">
@@ -190,7 +208,7 @@ export function ProjectDetail({ project }: { project: Project }) {
           </Reveal>
         )}
 
-        <div className="flex flex-col items-center justify-between gap-4 rounded-3xl border border-white/10 bg-white/[0.02] p-8 sm:flex-row">
+        <div className="flex flex-col items-center justify-between gap-4 rounded-3xl border border-white/10 bg-white/2 p-8 sm:flex-row">
           <div>
             <p className="font-display text-lg font-bold text-white">Want to see this live?</p>
             <p className="text-sm text-slate-400">
@@ -207,7 +225,7 @@ export function ProjectDetail({ project }: { project: Project }) {
                 href={project.liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-sheen inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-cyan-500 to-violet-500 px-5 py-2.5 text-sm font-semibold text-white transition-all hover:shadow-[0_0_20px_rgba(34,211,238,0.5)]"
+                className="btn-sheen inline-flex items-center gap-2 rounded-full bg-linear-to-r from-cyan-500 to-violet-500 px-5 py-2.5 text-sm font-semibold text-white transition-all hover:shadow-[0_0_20px_rgba(34,211,238,0.5)]"
               >
                 <ArrowUpRight className="h-4 w-4" /> Live Demo
               </Link>
@@ -244,7 +262,7 @@ function SectionTitle({
 }) {
   return (
     <div className="mb-8">
-      <span className="mb-3 inline-flex items-center gap-2 rounded-full border border-cyan-400/20 bg-cyan-400/[0.06] px-3 py-1 font-mono text-xs uppercase tracking-[0.2em] text-cyan-300">
+      <span className="mb-3 inline-flex items-center gap-2 rounded-full border border-cyan-400/20 bg-cyan-400/6 px-3 py-1 font-mono text-xs uppercase tracking-[0.2em] text-cyan-300">
         <Icon className="h-3.5 w-3.5" /> {label}
       </span>
       <h2 className="mb-5 font-display text-2xl font-bold text-white sm:text-3xl">{title}</h2>
@@ -265,7 +283,7 @@ function TechStack({ stack }: { stack: string[] }) {
       {stack.map((tech) => (
         <span
           key={tech}
-          className="rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-xs font-medium text-slate-300 transition-colors hover:border-cyan-400/40 hover:text-white"
+          className="rounded-full border border-white/10 bg-white/4 px-4 py-2 text-xs font-medium text-slate-300 transition-colors hover:border-cyan-400/40 hover:text-white"
         >
           {tech}
         </span>

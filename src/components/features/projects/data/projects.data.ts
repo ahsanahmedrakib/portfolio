@@ -506,6 +506,136 @@ export const projects: Project[] = [
     impact:
       "Shipped a scalable, documented REST API that other projects can plug into — built end to end with an AI-driven workflow to demonstrate the speed of agentic development.",
   },
+  {
+    slug: "flight-search-booking",
+    name: "Premium Flight Search & Booking",
+    shortName: "Flight Search",
+    tagline:
+      "A production-grade flight search, filtering, and booking platform — a three-step search-to-confirmation pipeline with live filtering, session-persistent state, and e-ticket delivery.",
+    category: "Travel & Booking",
+    year: "2026",
+    language: "Next Js",
+    image: "/projects/fts.png",
+    liveUrl: "https://flight-search-three.vercel.app",
+    repoUrl: "https://github.com/ahsanahmedrakib/flight-search",
+    stack: [
+      "Next.js 16",
+      "React 19",
+      "TypeScript",
+      "Tailwind CSS v4",
+      "Zustand",
+      "React Hook Form",
+      "yup",
+      "Resend",
+      "Nodemailer",
+    ],
+    gradient: "from-cyan-300 via-sky-400 to-blue-600",
+    monogram: "FS",
+    overview: [
+      "A high-performance flight search, filtering, and booking application built with the Next.js App Router, TypeScript, and Tailwind CSS v4. The experience is structured as a three-step pipeline: search and filter flights, capture passenger details, then land on a verifiable PNR e-ticket — with state carried seamlessly between steps.",
+      "Centralized state is powered by Zustand, with the persist middleware backed by sessionStorage so a user can refresh mid-flow without losing their search criteria, selected flight, or pre-filled passenger details. Passenger forms are orchestrated with React Hook Form and Yup resolvers, scaling dynamically to the exact number of travellers searched (up to 12).",
+    ],
+    role: [
+      "Architected and built the full multi-step booking pipeline — search, results, checkout, and confirmation.",
+      "Designed the strictly-typed domain model for airlines, aircraft, routes, stops, pricing, and baggage allowances.",
+      "Implemented the Zustand store with session persistence and the custom useFlight hook that pre-computes filter and sort combinations.",
+    ],
+    responsibilities: [
+      "Step 1 — Search and results: full flight search panel with native date pickers, filter sidebar, sort bar, and rich flight cards with inline accordion details.",
+      "Step 2 — Booking: dynamic passenger form whose field count matches the searched traveller count, with inline Yup validation for names, genders, and optional identifiers.",
+      "Step 3 — Confirmation: unique PNR generation, a print-optimized e-ticket pass, Web Share API support, and server-side email delivery.",
+      "Backend: a serverless route handler for e-ticket confirmations using Resend and Nodemailer.",
+    ],
+    features: [
+      "Multi-faceted filtering — max price slider, stop count, airline and aircraft selection, departure-hour brackets, refundability, punctuality rating thresholds, and meal/seat inclusion.",
+      "Dynamic sort bar — cheapest, fastest, earliest departure, and more, applied on the fly.",
+      "Zustand store with sessionStorage persistence that survives refreshes across the whole booking flow.",
+      "Dynamic field arrays scaling the passenger form to the searched traveller count (up to 12).",
+      "Type-inferred Yup schemas via yup.InferType, so runtime validation and compile-time types can never drift apart.",
+      "Generated PNR record locators with print-optimized ticket pass layouts and Web Share API integration.",
+      "Serverless e-ticket email delivery via Resend and Nodemailer.",
+      "Mobile-first responsive layouts from small phones to ultra-wide displays, with semantic HTML and screen-reader-friendly labels throughout.",
+    ],
+    highlights: [
+      {
+        title: "Multi-step, refresh-proof flow",
+        description:
+          "Session-persisted Zustand state means a traveller can refresh at any point in search or checkout without losing progress.",
+      },
+      {
+        title: "Types that can't drift",
+        description:
+          "Every form schema is a Yup object with types inferred natively from the schema, eliminating runtime-versus-compile-time mismatches.",
+      },
+      {
+        title: "Real booking semantics",
+        description:
+          "PNR generation, e-ticket email delivery, print passes, and Web Share make it behave like an actual travel product, not a demo.",
+      },
+    ],
+    impact:
+      "Delivered a complete airline-grade booking experience — search, deep filtering, dynamic multi-passenger checkout, and ticket confirmation — as a single stateless-friendly Next.js application.",
+  },
+  {
+    slug: "webbly-workspace-explorer",
+    name: "Webbly — Mini Workspace Explorer",
+    shortName: "Webbly",
+    tagline:
+      "A browser-based hierarchical file manager for folders and text files — create, navigate, search, edit, rename, and delete with zero backend, persisted entirely in localStorage.",
+    category: "Web Application",
+    year: "2026",
+    language: "React (Vite)",
+    image: "/projects/webbly.png",
+    liveUrl: "https://webbly-three.vercel.app",
+    repoUrl: "https://github.com/ahsanahmedrakib/webbly",
+    stack: ["React 18", "TypeScript", "Vite", "Custom Hooks", "localStorage", "Plain CSS"],
+    gradient: "from-rose-400 via-pink-500 to-orange-500",
+    monogram: "WB",
+    overview: [
+      "Webbly is a browser-based file manager: a full workspace tree where you create folders and text files, browse them, open a file in an editor, search across the entire workspace, rename, and recursively delete — with nothing installed and no server involved.",
+      "The workspace is modeled as a flat array of items linked by parentId rather than nested objects. A folder is simply an item whose id is referenced as another item's parentId. That single decision buys arbitrary nesting, cheap recursive deletion, trivially simple persistence to one JSON array in localStorage, and duplicate-name checks that only ever inspect direct siblings.",
+    ],
+    role: [
+      "Designed the flat-array-plus-parentId data model that underpins the entire application.",
+      "Implemented all state management in a single useWorkspace hook with immutable updates and persistence as a side effect.",
+      "Built the full component set — recursive tree, breadcrumb, file list, editor, search, toolbar, and modal dialogs.",
+    ],
+    responsibilities: [
+      "Data model and pure tree helpers — children, roots, siblings, paths, descendants, search, and duplicate-name checks.",
+      "The useWorkspace hook: single source of truth for items, navigation state, and editor dirty state.",
+      "Recursive tree view with per-folder expand/collapse and ancestor auto-expansion for the active folder.",
+      "Text editor with explicit Save, so content is only committed to the store on demand.",
+      "Workspace-wide search with match highlighting and breadcrumb trails, jumping straight to the result.",
+    ],
+    features: [
+      "Create and rename with validation — names are trimmed, must be non-empty, and cannot collide with a sibling in the same namespace.",
+      "Recursive delete that removes a folder and every nested descendant, with navigation and editor state repaired automatically.",
+      "Unsaved-changes guard — a confirm() on in-app navigation plus a beforeunload blocker on refresh or close, so typing is never lost silently.",
+      "Workspace-wide case-insensitive search across names at any depth, with highlighted matches and breadcrumb trails.",
+      "Recursive tree view with expand/collapse, selected-folder highlighting, and auto-expanded ancestors.",
+      "Clickable breadcrumb trail that navigates back to any ancestor folder.",
+      "Graceful empty state — the workspace starts empty and degrades cleanly, with creation actions always available.",
+    ],
+    highlights: [
+      {
+        title: "One hook, one truth",
+        description:
+          "All state lives in useWorkspace, so persistence is a side effect of the same updates that drive the UI — no prop drilling across a dozen components.",
+      },
+      {
+        title: "Flat array, full depth",
+        description:
+          "The parentId model serialises an arbitrarily nested tree to a single JSON array, making both recursion and persistence trivial.",
+      },
+      {
+        title: "Nothing can be lost",
+        description:
+          "Dirty-state tracking protects in-app navigation and browser refresh, and deletes never leave the UI pointing at a removed item.",
+      },
+    ],
+    impact:
+      "A dependency-light, backend-free file manager built on strict TypeScript and React alone — demonstrating that a clean data model plus pure helpers can carry a surprisingly complete product.",
+  },
 ];
 
 export function getProject(slug: string) {

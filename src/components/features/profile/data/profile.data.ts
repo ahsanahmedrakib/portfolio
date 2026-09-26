@@ -27,7 +27,7 @@ export const profile = {
   ],
   summary: [
     "Software Engineer with 4+ years of experience designing and developing scalable web applications using React.js, Next.js, JavaScript, and TypeScript. I have a proven track record of delivering enterprise-grade solutions in the travel and aviation industry — including booking platforms, administrative systems, CRM solutions, and operational management tools.",
-    "Today I work as an AI Agentic Developer — orchestrating Claude CLI, opencode CLI, ChatGPT, and Grok to design, implement, debug, and optimize software end to end. Using MCP servers, LLM orchestration, and strong context engineering, I've shipped more than 7 complete projects with AI agents at the core of the workflow, dramatically accelerating delivery without cutting corners on quality.",
+    "Today I work as an AI Agentic Developer — orchestrating Claude CLI, opencode CLI, ChatGPT, and Grok to design, implement, debug, and optimize software end to end. Using MCP servers, LLM orchestration, and strong context engineering, I've shipped more than 9 complete projects with AI agents at the core of the workflow, dramatically accelerating delivery without cutting corners on quality.",
   ],
   highlights: [
     {
@@ -50,7 +50,7 @@ export const profile = {
   about: [
     "I'm a Software Engineer based in Dhaka, Bangladesh, currently building enterprise applications at TechnoNext Software Ltd (a concern of US-Bangla Group). My journey started with a diploma in Computer Technology and grew through a BSc in CSE — now I ship production-grade web apps used by thousands of users.",
     "Over the years I've built booking platforms for airlines, administrative and aviation maintenance (CAMO/AMO) systems, CRM solutions, full-featured CMS corporate websites, e-commerce platforms, and school management systems. I care deeply about clean architecture, performance, and delightful UI/UX.",
-    "Lately I've embraced agentic engineering: I pair Claude CLI, opencode CLI, ChatGPT, and Grok — connected through MCP servers — with strong context engineering to design, implement, debug, and ship features faster. More than 7 of my recent projects were built end to end with AI agents, proving that a disciplined agentic workflow can deliver production-grade software at a fraction of the usual time.",
+    "Lately I've embraced agentic engineering: I pair Claude CLI, opencode CLI, ChatGPT, and Grok — connected through MCP servers — with strong context engineering to design, implement, debug, and ship features faster. More than 9 of my recent projects were built end to end with AI agents, proving that a disciplined agentic workflow can deliver production-grade software at a fraction of the usual time.",
   ],
   proficiencies: [
     { name: "AI Agentic Development & LLM Orchestration", level: 95 },

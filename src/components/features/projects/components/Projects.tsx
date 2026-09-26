@@ -29,7 +29,7 @@ export function Projects() {
               Recent projects, <span className="text-gradient">explained end to end</span>
             </>
           }
-          description="Eight of my latest builds — from CMS-driven corporate websites to full e-commerce, school management systems, and a 100% AI-driven REST API. Every card opens into a complete case study."
+          description="Ten of my latest builds — from CMS-driven corporate websites to full e-commerce, school management systems, a flight booking platform, and a 100% AI-driven REST API. Every card opens into a complete case study."
         />
 
         <Reveal variant="fade">
@@ -41,8 +41,8 @@ export function Projects() {
                 className={cn(
                   "rounded-full px-4 py-2 text-xs font-semibold transition-all sm:text-sm",
                   filter === cat
-                    ? "bg-gradient-to-r from-cyan-500 to-violet-500 text-white shadow-[0_0_20px_rgba(34,211,238,0.4)]"
-                    : "border border-white/10 bg-white/[0.03] text-slate-300 hover:border-cyan-400/40 hover:text-white",
+                    ? "bg-linear-to-r from-cyan-500 to-violet-500 text-white shadow-[0_0_20px_rgba(34,211,238,0.4)]"
+                    : "border border-white/10 bg-white/3 text-slate-300 hover:border-cyan-400/40 hover:text-white",
                 )}
               >
                 {cat}
